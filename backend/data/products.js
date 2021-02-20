@@ -1,6 +1,5 @@
 const products = [
   {
-    id: "1",
     name: "Roland TD-1DMK V-Drums Electronic Drum Kit",
     image: "/img/roland.png",
     brand: "Roland",
@@ -13,7 +12,6 @@ const products = [
   },
 
   {
-    id: "2",
     name: "Yamaha DTX452K Electronic Drum Kit",
     image: "/img/yamaha.jpeg",
     brand: "Yamaha",
