@@ -34,7 +34,7 @@ const productShema = mongoose.Schema(
       required: true,
     },
     category: {
-      type: Boolean,
+      type: String,
       required: true,
     },
 
@@ -73,6 +73,6 @@ const productShema = mongoose.Schema(
   }
 );
 
-const Product = mongoose.model("Product", userSchema);
+const Product = mongoose.model("Product", productShema);
 
 export default Product;
