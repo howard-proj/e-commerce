@@ -3,6 +3,8 @@ import connectDB from "./config/db.js";
 import dotenv from "dotenv";
 import colors from "colors";
 import productRoutes from "./routes/productRoutes.js";
+import uesrRoutes from "./routes/userRoutes.js";
+
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
@@ -10,12 +12,15 @@ dotenv.config();
 connectDB();
 
 const app = express();
+// Allow us to except json data in the body
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("API is running....");
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/users", uesrRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
