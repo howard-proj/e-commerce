@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import Product from "../models/orderModel.js";
+import Order from "../models/orderModel.js";
 
 // @description: Create new order
 // @route: POST /api/orders
@@ -11,14 +11,13 @@ const addOrderItems = asyncHandler(async (req, res) => {
     paymentMethod,
     itemsPrice,
     taxPrice,
-    shipingPrice,
+    shippingPrice,
     totalPrice,
   } = req.body;
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error("No order items");
-    return;
   } else {
     const order = new Order({
       orderItems,
@@ -27,7 +26,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
       paymentMethod,
       itemsPrice,
       taxPrice,
-      shipingPrice,
+      shippingPrice,
       totalPrice,
     });
 
